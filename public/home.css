@@ -1,0 +1,164 @@
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+    color: #006622;
+	text-transform: uppercase; 
+	letter-spacing: 2px}
+}
+
+.navbar-light .navbar-brand {
+    color: #225378;
+	text-transform: uppercase; 
+	letter-spacing: 2px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: #225378;
+	text-transform: uppercase; 
+	letter-spacing: 2px
+}
+
+body {
+	padding-top: 56px;
+	font-family: 'Open Sans', sans-serif;
+	color: #e3f2fd;
+	background-color: #fff;
+	margin-top: 0px; 
+}
+
+.header-style {
+	margin-bottom: 15px; 
+	color: #225378; 
+	font-size: 20px; 
+	text-transform: uppercase; 
+	letter-spacing: 2px;
+}
+
+.header-style-two {
+	margin-top: 20px; 
+	margin-bottom: 20px; 
+	color: #e3f2fd; 
+	font-size: 14px; 
+	text-transform: uppercase; 
+	letter-spacing: 2px;
+}
+
+
+.size {
+	font-size: 40px;
+	letter-spacing: 10px;
+}
+
+a {
+    color: #225378;
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 0;
+    background-color: #225378;
+    border-radius: 0.3rem;
+}
+
+footer p {
+	color: #225378;
+}
+
+.light {
+	border-color: #e3f2fd;
+}
+
+#social-fb:hover {
+	color: #C5D2E8;
+}
+
+#social-tw:hover {
+	color: #C5D2E8;
+}
+
+#social-gp:hover {
+	color: #C5D2E8;
+}
+
+#social-em:hover {
+	color: #C5D2E8;
+}
+
+.dark {
+	border-color: #225378;
+}
+
+.jumbo-light {
+    padding: 2rem 1rem;
+    margin-bottom: 0;
+    background-color: #e3f2fd;
+    border-radius: 0.3rem;
+}
+
+.jumbo-light p, .jumbo-light h1 {
+	color: #225378;
+}
+
+.align, .right {
+	text-align: right;
+}
+
+.border-div {
+	margin-top: 20px;
+	border-bottom: 1px solid #225378;
+}
+
+.border-pad {
+	padding-bottom: 10px; 
+}
+
+.circle {
+	margin-top: 50px
+}
+
+.overlay {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;	
+	background: rgba(0,0,0,0.95);
+	overflow-x: hidden;
+	z-index: 5;
+	transition: all 0.5s;
+}
+
+.overlay__content {
+	position: relative;
+	top: 25%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px
+}
+
+.overlay .atags {
+	padding: 10px;
+	color: #ccc;
+	font-size: 25px;
+	text-decoration: none;
+	display: block;
+}
+
+.overlay .atags:hover{
+	color: #fff;
+}
+
+.overlay a {
+	padding: 0px;
+	color: #ccc;
+	font-size: 25px;
+	text-decoration: none;
+}
+
+img {
+	width: 30%;
+	float: left;
+	margin: 1.66%;
+}
+
+.focus:focus {outline:0;}
+
+

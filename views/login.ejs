@@ -1,0 +1,34 @@
+<% include partials/header %>
+<% include partials/topnav %>
+
+<div id="nav" class = "overlay">
+		<div class="overlay__content">
+
+				<div class="container">
+			 	<div class="row">
+			    <div class="col-sm">
+			    </div>
+			    <div class="col-sm">
+			      <form action = "/login" method = "POST">
+			      <input type="text" name = "username" class="form-control" id="pwd" placeholder="Username" style="margin-top: 5.5em;width:100%; ">
+			      <input type="Password" name = "password" class="form-control" id="pwd" placeholder="Password" style="margin-top: 1em;width:100%; ">
+			      <button class="btn btn-link" style="margin-top: 1em; margin-bottom: 80px; color: #e3f2fd; font-size: 25px">Enter</button>
+			      </form>
+			    </div>
+			    <div class="col-sm">
+			      
+			    </div>
+			  </div>
+			</div>
+			
+
+			<a href="#"><i id="social-fb" class="social fab fa-facebook-square size"></i></a>
+			<a href="#"><i id="social-tw" class="social fab fa-twitter-square size"></i></a>
+			<a href="#"><i id="social-gp" class="social fab fa-google-plus-square size"></i></a>
+			<a href="#"><i id="social-em" class="social fas fa-envelope-square size"></i></a>
+			
+			</div>
+		</div>
+	</div>
+
+<% include partials/footer %>

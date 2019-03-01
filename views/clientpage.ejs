@@ -1,0 +1,294 @@
+<% include partials/header %>
+
+<!-- navbar starts -->
+	<nav class="my-navbar navbar fixed-top navbar-expand-md navbar-light" style="background-color: #e3f2fd;">
+		<div class="container">
+		  <a style = "color: #225378; letter-spacing: 1.5px;" id = "my" class="navbar-brand">
+		  	<% if (user[0].name) { %>
+		  	<%= user[0].name + "'s" %> 
+		  	<% } %>
+		  	Client Design
+		  </a>
+		</div>
+        <a class="nav-link disabled" tabindex="-1" aria-disabled="true" style="color: rgba(34,83,120,0.75)"></a>
+      
+	</nav>
+<!-- navbar ends -->
+
+
+<!-- overlay starts -->
+
+<div id="nav" class = "overlay" style = "height: 0%;">
+	<div class="overlay__content" style = "top: 5%;">
+			
+		<div class="row">
+			<div class="col-1">
+				
+			</div>
+			<div class="col">
+				
+			</div>
+			<div class="col-1">
+				<i id="exit" style = "font-size: 30px;" class="fas fa-times"></i>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<span id = "imgLarge"></span>
+			</div>
+		</div>
+
+<% if (!(user[0].imgs.length == 1)){ %> 
+
+		<div class="row">
+			<div class="col">
+
+			</div>
+			<div class="col">
+				<button id="previous" class = "focus" style="background-color: rgba(0,0,0,0.95); border: none;"><i class="fas fa-arrow-left" style = "font-size: 30px; color: #e3f2fd;"></i></button>
+				<button id="next" class = "focus" style="background-color: rgba(0,0,0,0.95); border: none;"><i class="fas fa-arrow-right" style = "font-size: 30px; color: #e3f2fd;"></i></button>
+			</div>
+			<div class="col">
+				
+			</div>
+		</div>
+
+<% } %>
+
+	</div>
+</div>
+
+<!-- overlay ends -->
+
+
+
+
+<!-- if no paragragrahphs -->
+
+
+
+
+<% if (!(user[0].paragraphs.titles[0])){ %> 
+
+	<% if (!(user[0].imgs[0])) { %>
+
+		<!-- put videos -->
+		<% if (user[0].videos[0]) { %>
+
+		<% user[0].videos.forEach(function(val, x){ %> 
+
+		<div style="background-color: white;" class="jumbotron jumbotron-fluid jumbo-light">
+		  <div class="container">
+		    <div class="col">
+			  	<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+			  		<iframe width="100%" height="500" src="<%= user[0].videos[x] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+		  	</div>
+		  </div>
+		</div>
+
+		<% }) %>
+
+		<% } %>
+
+
+	<% } else { %>
+
+	<% if (!(user[0].imgs.length % 3 == 0)) { %>
+
+			<div style="background-color: white ;position: relative; top: 25%;width: 100%; text-align: center; margin-top: 30px;" class="jumbotron jumbotron-fluid jumbo-light">
+			  <div class="container">
+			  	<div class="col">
+			  	<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+
+		<% user[0].imgs.forEach(function(val, x){ %> 
+					<img style = " float: none;" class = "imgs" id = "img<%= x %>" src="<%= user[0].imgs[x] %>" onclick = "imgClicked(<%= x %>)">
+		<% }) %>
+
+				<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+			    </div>
+			  </div>
+			</div>
+
+	<% } else { %>
+
+			<div style="background-color: white;" class="jumbotron jumbotron-fluid jumbo-light">
+			  <div class="container">
+			  	<div class="col">
+			  	<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+
+		<% user[0].imgs.forEach(function(val, x){ %> 
+					<img class = "imgs" id = "img<%= x %>" src="<%= user[0].imgs[x] %>" onclick = "imgClicked(<%= x %>)">
+		<% }) %>
+
+				<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+			    </div>
+			  </div>
+			</div>
+
+	<% } %>
+
+		<!-- put videos -->
+		<% if (user[0].videos[0]) { %>
+
+		<% user[0].videos.forEach(function(val, x){ %> 
+
+		<div style="background-color: white;" class="jumbotron jumbotron-fluid jumbo-light">
+		  <div class="container">
+		    <div class="col">
+			  	<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+			  		<iframe width="100%" height="500" src="<%= user[0].videos[x] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+		  	</div>
+		  </div>
+		</div>
+
+		<% }) %>
+
+		<% } %>
+
+	<% } %>
+
+<% } %>
+
+
+
+<!-- if paragraphs -->
+
+
+	
+<% user[0].paragraphs.titles.forEach(function(val, i){ %> 
+
+<% if (i % 2 == 0){ %>
+
+
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h1 class="display-4"><%= user[0].paragraphs.titles[i] %></h1><hr class="light">
+	    <div class="row">
+	      <div class="col-12">
+		    <p><%= user[0].paragraphs.textAreas[i] %></p>
+		  </div>
+		</div> 
+	  </div>
+	</div>
+
+
+		<% if (i == 0) { %>
+
+		<!-- if images -->
+
+		<% if (user[0].imgs[0]) { %>
+		<% if (!(user[0].imgs.length % 3 == 0)) { %>
+
+				<div style="background-color: white ;position: relative; top: 25%;width: 100%; text-align: center; margin-top: 30px;" class="jumbotron jumbotron-fluid jumbo-light">
+				  <div class="container">
+				  	<div class="col">
+				  	<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+
+			<% user[0].imgs.forEach(function(val, x){ %> 
+						<img style = " float: none;" class = "imgs" id = "img<%= x %>" src="<%= user[0].imgs[x] %>" onclick = "imgClicked(<%= x %>)">
+			<% }) %>
+
+					<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+				    </div>
+				  </div>
+				</div>
+
+		<% } else { %>
+
+				<div style="background-color: white;" class="jumbotron jumbotron-fluid jumbo-light">
+				  <div class="container">
+				  	<div class="col">
+				  	<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+
+			<% user[0].imgs.forEach(function(val, x){ %> 
+						<img class = "imgs" id = "img<%= x %>" src="<%= user[0].imgs[x] %>" onclick = "imgClicked(<%= x %>)">
+			<% }) %>
+
+					<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+				    </div>
+				  </div>
+				</div>
+
+		<% } %>
+		<% } %>
+
+		<% if (!(user[0].paragraphs.titles[1])) { %>
+
+			<!-- put videos -->
+			<% if (user[0].videos[0]) { %>
+
+			<% user[0].videos.forEach(function(val, x){ %> 
+
+			<div style="background-color: white;" class="jumbotron jumbotron-fluid jumbo-light">
+			  <div class="container">
+			    <div class="col">
+				  	<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+				  		<iframe width="100%" height="500" src="<%= user[0].videos[x] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+			  	</div>
+			  </div>
+			</div>
+
+			<% }) %>
+
+			<% } %>
+
+		<% } %>
+
+		<% } %>
+
+<% } else { %>
+
+
+	<div class="jumbotron jumbotron-fluid jumbo-light">
+	  <div class="container">
+	    <h1 class="display-4"><%= user[0].paragraphs.titles[i] %></h1><hr class="dark">
+	    <div class="row">
+	      <div class="col-12">
+		    <p><%= user[0].paragraphs.textAreas[i] %></p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+		<% if (i == 1) { %>
+
+		<% if (user[0].videos[0]) { %>
+
+		<% user[0].videos.forEach(function(val, x){ %> 
+
+		<div style="background-color: white;" class="jumbotron jumbotron-fluid jumbo-light">
+		  <div class="container">
+		    <div class="col">
+			  	<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+			  		<iframe width="100%" height="500" src="<%= user[0].videos[x] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p style="font-size: 1px; color: #fff">njsdnkjds</p>
+		  	</div>
+		  </div>
+		</div>
+
+		<% }) %>
+
+		<% } %>
+
+		<% } %>
+
+<% } %>
+<% }) %>	
+
+
+
+
+<% include partials/bottomnav %>
+<% include partials/footer2 %>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/clientpage.js"></script>
+
+</body>
+</html>
